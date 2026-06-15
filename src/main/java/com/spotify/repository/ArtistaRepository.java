@@ -35,7 +35,7 @@ public interface ArtistaRepository extends JpaRepository<Artista, Long> {
 
     @Query("""
         SELECT m FROM Musica m
-        JOIN m.artista a
+        JOIN FETCH m.artista a
         WHERE a.nomeArtista = :nomeArtista
         AND m.duracaoSegundos > (
             SELECT MAX(m2.duracaoSegundos) FROM Musica m2

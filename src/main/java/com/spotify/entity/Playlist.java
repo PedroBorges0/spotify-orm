@@ -30,7 +30,7 @@ public class Playlist {
     private Boolean publica = true;
 
     // @MapsId vincula o usuarioId da PK composta à FK do relacionamento
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY) //muitas plakylists podem pertencer a um usuario
     @MapsId("usuarioId")
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;

@@ -30,7 +30,7 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... args) {
         log.info("=====> Iniciando carga de dados de exemplo...");
 
-        Artista queen    = salvarArtista("Pantera",        "Estados Unidos", 1981);
+        Artista queen    = salvarArtista("Queen",        "Estados Unidos", 1981);
         Artista acdc     = salvarArtista("AC/DC",        "Austrália",   1973);
         Artista led      = salvarArtista("Led Zeppelin", "Reino Unido", 1968);
         Artista beatles  = salvarArtista("The Beatles",  "Reino Unido", 1960);

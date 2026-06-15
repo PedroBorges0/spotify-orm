@@ -5,8 +5,11 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "musica")
+@org.hibernate.annotations.Check(constraints = "duracao_segundos > 0")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -35,6 +38,7 @@ public class Musica {
     @JoinColumn(name = "artista_id", nullable = false)
     private Artista artista;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "musica", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MusicaPlaylist> musicasPlaylists = new ArrayList<>();
 }
